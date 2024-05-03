@@ -42,13 +42,78 @@ syntax  match  TodoProject    '\(^\|\W\)+[^[:blank:]]\+'  contains=NONE
 syntax  match  TodoContext    '\(^\|\W\)@[^[:blank:]]\+'  contains=NONE
 
 " Other priority colours might be defined by the user
+" highlight  default  link  TodoDone       Comment
+" highlight  default  link  TodoPriorityA  Constant
+" highlight  default  link  TodoPriorityB  Statement
+" highlight  default  link  TodoPriorityC  Identifier
+" highlight  default  link  TodoDate       PreProc
+" highlight  default  link  TodoProject    Special
+" highlight  default  link  TodoContext    Special
+
+" catppuccin colors
+" WinBar = rosewater
+" Identifier = flamingo
+" PreProc = Special = pink
+" Statement = mauve
+" Error = red
+" @variable.parameter = maroon
+" Constant = peach
+" WarningMsg = yellow
+" String = green
+" Character = teal
+" Operator = sky
+" Label = sapphire
+" Function = blue
+" CursorLineNr = lavender
+" Comment = overlay0
+"
+" todo priority order from A to Z, cycling
+" red               Error
+" maroon            @variable.parameter
+" peach             Constant
+" yellow            WarningMsg
+" mauve             Statement
+" pink              PreProc
+" green             String
+" teal              Character
+" sky               Operator
+" sapphire          Label
+" blue              Function
+" lavender          CursorLineNr
+" flamingo          Identifier
+" rosewater         WinBar
+
 highlight  default  link  TodoDone       Comment
-highlight  default  link  TodoPriorityA  Constant
-highlight  default  link  TodoPriorityB  Statement
-highlight  default  link  TodoPriorityC  Identifier
 highlight  default  link  TodoDate       PreProc
 highlight  default  link  TodoProject    Special
 highlight  default  link  TodoContext    Special
+
+highlight  default  link  TodoPriorityA  Error
+highlight  default  link  TodoPriorityB  @variable.parameter
+highlight  default  link  TodoPriorityC  Constant
+highlight  default  link  TodoPriorityD  WarningMsg
+highlight  default  link  TodoPriorityE  Statement
+highlight  default  link  TodoPriorityF  PreProc
+highlight  default  link  TodoPriorityG  String
+highlight  default  link  TodoPriorityH  Character
+highlight  default  link  TodoPriorityI  Operator
+highlight  default  link  TodoPriorityJ  Label
+highlight  default  link  TodoPriorityK  Function
+highlight  default  link  TodoPriorityL  CursorLineNr
+highlight  default  link  TodoPriorityM  Identifier
+highlight  default  link  TodoPriorityN  WinBar
+highlight  default  link  TodoPriorityO  Error
+highlight  default  link  TodoPriorityP  @variable.parameter
+highlight  default  link  TodoPriorityQ  Constant
+highlight  default  link  TodoPriorityR  WarningMsg
+highlight  default  link  TodoPriorityS  Statement
+highlight  default  link  TodoPriorityT  PreProc
+highlight  default  link  TodoPriorityU  String
+highlight  default  link  TodoPriorityV  Character
+highlight  default  link  TodoPriorityW  Operator
+highlight  default  link  TodoPriorityX  Label
+highlight  default  link  TodoPriorityY  Function
+highlight  default  link  TodoPriorityZ  CursorLineNr
 
 if exists('g:todo_load_python') && g:todo_load_python
     if has('python')
