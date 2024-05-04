@@ -9,35 +9,68 @@ if exists("b:current_syntax")
     finish
 endif
 
-syntax  match  TodoDone       '^[xX]\s.\+$'
-syntax  match  TodoPriorityA  '^([aA])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityB  '^([bB])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityC  '^([cC])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityD  '^([dD])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityE  '^([eE])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityF  '^([fF])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityG  '^([gG])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityH  '^([hH])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityI  '^([iI])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityJ  '^([jJ])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityK  '^([kK])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityL  '^([lL])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityM  '^([mM])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityN  '^([nN])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityO  '^([oO])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityP  '^([pP])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityQ  '^([qQ])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityR  '^([rR])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityS  '^([sS])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityT  '^([tT])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityU  '^([uU])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityV  '^([vV])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityW  '^([wW])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityX  '^([xX])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityY  '^([yY])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
-syntax  match  TodoPriorityZ  '^([zZ])\s.\+$'             contains=TodoDate,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoDate1      '\d\{2,4\}-\d\{2\}-01' contains=NONE
+syntax  match  TodoDate2      '\d\{2,4\}-\d\{2\}-02' contains=NONE
+syntax  match  TodoDate3      '\d\{2,4\}-\d\{2\}-03' contains=NONE
+syntax  match  TodoDate4      '\d\{2,4\}-\d\{2\}-04' contains=NONE
+syntax  match  TodoDate5      '\d\{2,4\}-\d\{2\}-05' contains=NONE
+syntax  match  TodoDate6      '\d\{2,4\}-\d\{2\}-06' contains=NONE
+syntax  match  TodoDate7      '\d\{2,4\}-\d\{2\}-07' contains=NONE
+syntax  match  TodoDate8      '\d\{2,4\}-\d\{2\}-08' contains=NONE
+syntax  match  TodoDate9      '\d\{2,4\}-\d\{2\}-09' contains=NONE
+syntax  match  TodoDate10     '\d\{2,4\}-\d\{2\}-10' contains=NONE
+syntax  match  TodoDate11     '\d\{2,4\}-\d\{2\}-11' contains=NONE
+syntax  match  TodoDate12     '\d\{2,4\}-\d\{2\}-12' contains=NONE
+syntax  match  TodoDate13     '\d\{2,4\}-\d\{2\}-13' contains=NONE
+syntax  match  TodoDate14     '\d\{2,4\}-\d\{2\}-14' contains=NONE
+syntax  match  TodoDate15     '\d\{2,4\}-\d\{2\}-15' contains=NONE
+syntax  match  TodoDate16     '\d\{2,4\}-\d\{2\}-16' contains=NONE
+syntax  match  TodoDate17     '\d\{2,4\}-\d\{2\}-17' contains=NONE
+syntax  match  TodoDate18     '\d\{2,4\}-\d\{2\}-18' contains=NONE
+syntax  match  TodoDate19     '\d\{2,4\}-\d\{2\}-19' contains=NONE
+syntax  match  TodoDate20     '\d\{2,4\}-\d\{2\}-20' contains=NONE
+syntax  match  TodoDate21     '\d\{2,4\}-\d\{2\}-21' contains=NONE
+syntax  match  TodoDate22     '\d\{2,4\}-\d\{2\}-22' contains=NONE
+syntax  match  TodoDate23     '\d\{2,4\}-\d\{2\}-23' contains=NONE
+syntax  match  TodoDate24     '\d\{2,4\}-\d\{2\}-24' contains=NONE
+syntax  match  TodoDate25     '\d\{2,4\}-\d\{2\}-25' contains=NONE
+syntax  match  TodoDate26     '\d\{2,4\}-\d\{2\}-26' contains=NONE
+syntax  match  TodoDate27     '\d\{2,4\}-\d\{2\}-27' contains=NONE
+syntax  match  TodoDate28     '\d\{2,4\}-\d\{2\}-28' contains=NONE
+syntax  match  TodoDate29     '\d\{2,4\}-\d\{2\}-29' contains=NONE
+syntax  match  TodoDate30     '\d\{2,4\}-\d\{2\}-30' contains=NONE
+syntax  match  TodoDate31     '\d\{2,4\}-\d\{2\}-31' contains=NONE
 
-syntax  match  TodoDate       '\d\{2,4\}-\d\{2\}-\d\{2\}' contains=NONE
+syntax cluster TodoDateGroup add=TodoDate1,TodoDate2,TodoDate3,TodoDate4,TodoDate5,TodoDate6,TodoDate7,TodoDate8,TodoDate9,TodoDate10,TodoDate11,TodoDate12,TodoDate13,TodoDate14,TodoDate15,TodoDate16,TodoDate17,TodoDate18,TodoDate19,TodoDate20,TodoDate21,TodoDate22,TodoDate23,TodoDate24,TodoDate25,TodoDate26,TodoDate27,TodoDate28,TodoDate29,TodoDate30,TodoDate31
+
+syntax  match  TodoPriorityA  '^([aA])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityB  '^([bB])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityC  '^([cC])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityD  '^([dD])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityE  '^([eE])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityF  '^([fF])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityG  '^([gG])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityH  '^([hH])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityI  '^([iI])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityJ  '^([jJ])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityK  '^([kK])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityL  '^([lL])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityM  '^([mM])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityN  '^([nN])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityO  '^([oO])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityP  '^([pP])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityQ  '^([qQ])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityR  '^([rR])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityS  '^([sS])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityT  '^([tT])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityU  '^([uU])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityV  '^([vV])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityW  '^([wW])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityX  '^([xX])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityY  '^([yY])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+syntax  match  TodoPriorityZ  '^([zZ])\s.\+$'             contains=@TodoDateGroup,TodoProject,TodoContext,OverDueDate
+
+syntax  match  TodoDone       '^[xX]\s.\+$'
 syntax  match  TodoProject    '\(^\|\W\)+[^[:blank:]]\+'  contains=NONE
 syntax  match  TodoContext    '\(^\|\W\)@[^[:blank:]]\+'  contains=NONE
 
@@ -50,41 +83,41 @@ syntax  match  TodoContext    '\(^\|\W\)@[^[:blank:]]\+'  contains=NONE
 " highlight  default  link  TodoProject    Special
 " highlight  default  link  TodoContext    Special
 
-" catppuccin colors
-" WinBar = rosewater
-" Identifier = flamingo
-" PreProc = Special = pink
-" Statement = mauve
-" Error = red
-" @variable.parameter = maroon
-" Constant = peach
-" WarningMsg = yellow
-" String = green
-" Character = teal
-" Operator = sky
-" Label = sapphire
-" Function = blue
-" CursorLineNr = lavender
-" Comment = overlay0
+" catppuccin colors. This order is how it's defined in the colorscheme. Use
+" this ordering as a default ordering for date and project regexes.
+" rosewater           WinBar
+" flamingo            Identifier
+" pink                PreProc, Special
+" mauve               Statement
+" red                 Error
+" maroon              @variable.parameter
+" peach               Constant
+" yellow              WarningMsg
+" green               String
+" teal                Character
+" sky                 Operator
+" sapphire            Label
+" blue                Function
+" lavender            CursorLineNr
+" overlay0            Comment (TodoDone) " skip this one for date and project
 "
 " todo priority order from A to Z, cycling
-" red               Error
-" maroon            @variable.parameter
-" peach             Constant
-" yellow            WarningMsg
-" mauve             Statement
-" pink              PreProc
-" green             String
-" teal              Character
-" sky               Operator
-" sapphire          Label
-" blue              Function
-" lavender          CursorLineNr
-" flamingo          Identifier
-" rosewater         WinBar
+" red                 Error
+" maroon              @variable.parameter
+" peach               Constant
+" yellow              WarningMsg
+" mauve               Statement
+" pink                PreProc
+" green               String
+" teal                Character
+" sky                 Operator
+" sapphire            Label
+" blue                Function
+" lavender            CursorLineNr
+" flamingo            Identifier
+" rosewater           WinBar
 
 highlight  default  link  TodoDone       Comment
-highlight  default  link  TodoDate       PreProc
 highlight  default  link  TodoProject    Special
 highlight  default  link  TodoContext    Special
 
@@ -114,6 +147,38 @@ highlight  default  link  TodoPriorityW  Operator
 highlight  default  link  TodoPriorityX  Label
 highlight  default  link  TodoPriorityY  Function
 highlight  default  link  TodoPriorityZ  CursorLineNr
+
+highlight  default  link  TodoDate1      WinBar
+highlight  default  link  TodoDate2      Identifier
+highlight  default  link  TodoDate3      PreProc
+highlight  default  link  TodoDate4      Statement
+highlight  default  link  TodoDate5      Error
+highlight  default  link  TodoDate6      @variable.parameter
+highlight  default  link  TodoDate7      Constant
+highlight  default  link  TodoDate8      WarningMsg
+highlight  default  link  TodoDate9      String
+highlight  default  link  TodoDate10     Character
+highlight  default  link  TodoDate11     Operator
+highlight  default  link  TodoDate12     Label
+highlight  default  link  TodoDate13     Function
+highlight  default  link  TodoDate14     CursorLineNr
+highlight  default  link  TodoDate15     WinBar
+highlight  default  link  TodoDate16     Identifier
+highlight  default  link  TodoDate17     PreProc
+highlight  default  link  TodoDate18     Statement
+highlight  default  link  TodoDate19     Error
+highlight  default  link  TodoDate20     @variable.parameter
+highlight  default  link  TodoDate21     Constant
+highlight  default  link  TodoDate22     WarningMsg
+highlight  default  link  TodoDate23     String
+highlight  default  link  TodoDate24     Character
+highlight  default  link  TodoDate25     Operator
+highlight  default  link  TodoDate26     Label
+highlight  default  link  TodoDate27     Function
+highlight  default  link  TodoDate28     CursorLineNr
+highlight  default  link  TodoDate29     WinBar
+highlight  default  link  TodoDate30     Identifier
+highlight  default  link  TodoDate31     PreProc
 
 if exists('g:todo_load_python') && g:todo_load_python
     if has('python')
