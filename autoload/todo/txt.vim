@@ -44,6 +44,18 @@ function! todo#txt#mark_as_done()
     execute 'normal! 0ix '
 endfunction
 
+function! todo#txt#mark_as_failed()
+    call s:remove_priority()
+    call todo#txt#prepend_date()
+    execute 'normal! 0if '
+endfunction
+
+function! todo#txt#mark_as_wontdo()
+    call s:remove_priority()
+    call todo#txt#prepend_date()
+    execute 'normal! 0iw '
+endfunction
+
 function! todo#txt#mark_all_as_done()
     :g!/^x /:call todo#txt#mark_as_done()
 endfunction
