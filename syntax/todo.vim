@@ -9,6 +9,8 @@ if exists("b:current_syntax")
     finish
 endif
 
+syntax  match  TodoDone       '^[xX]\s.\+$'
+
 syntax  match  TodoDate1      '\d\{2,4\}-\d\{2\}-01' contains=NONE
 syntax  match  TodoDate2      '\d\{2,4\}-\d\{2\}-02' contains=NONE
 syntax  match  TodoDate3      '\d\{2,4\}-\d\{2\}-03' contains=NONE
@@ -43,37 +45,6 @@ syntax  match  TodoDate31     '\d\{2,4\}-\d\{2\}-31' contains=NONE
 
 syntax cluster TodoDateGroup add=TodoDate1,TodoDate2,TodoDate3,TodoDate4,TodoDate5,TodoDate6,TodoDate7,TodoDate8,TodoDate9,TodoDate10,TodoDate11,TodoDate12,TodoDate13,TodoDate14,TodoDate15,TodoDate16,TodoDate17,TodoDate18,TodoDate19,TodoDate20,TodoDate21,TodoDate22,TodoDate23,TodoDate24,TodoDate25,TodoDate26,TodoDate27,TodoDate28,TodoDate29,TodoDate30,TodoDate31
 
-syntax  match  TodoPriorityA  '^([aA])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-syntax  match  TodoPriorityB  '^([bB])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-syntax  match  TodoPriorityC  '^([cC])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-syntax  match  TodoPriorityD  '^([dD])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-syntax  match  TodoPriorityE  '^([eE])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-syntax  match  TodoPriorityF  '^([fF])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-syntax  match  TodoPriorityG  '^([gG])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-syntax  match  TodoPriorityH  '^([hH])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-syntax  match  TodoPriorityI  '^([iI])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-syntax  match  TodoPriorityJ  '^([jJ])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-syntax  match  TodoPriorityK  '^([kK])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-syntax  match  TodoPriorityL  '^([lL])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-syntax  match  TodoPriorityM  '^([mM])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-syntax  match  TodoPriorityN  '^([nN])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-syntax  match  TodoPriorityO  '^([oO])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-syntax  match  TodoPriorityP  '^([pP])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-syntax  match  TodoPriorityQ  '^([qQ])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-syntax  match  TodoPriorityR  '^([rR])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-syntax  match  TodoPriorityS  '^([sS])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-syntax  match  TodoPriorityT  '^([tT])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-syntax  match  TodoPriorityU  '^([uU])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-syntax  match  TodoPriorityV  '^([vV])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-syntax  match  TodoPriorityW  '^([wW])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-syntax  match  TodoPriorityX  '^([xX])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-syntax  match  TodoPriorityY  '^([yY])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-syntax  match  TodoPriorityZ  '^([zZ])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
-
-syntax  match  TodoDone       '^[xX]\s.\+$'
-
-syntax region TodoRegion start=/[+@]\w/ end=/\(\s\|$\)/ contains=TodoA,TodoB,TodoC,TodoD,TodoE,TodoF,TodoG,TodoH,TodoI,TodoJ,TodoK,TodoL,TodoM,TodoN,TodoO,TodoP,TodoQ,TodoR,TodoS,TodoT,TodoU,TodoV,TodoW,TodoX,TodoY,TodoZ
-
 syntax match TodoA /[+@.-]a\w*/ contained
 syntax match TodoB /[+@.-]b\w*/ contained
 syntax match TodoC /[+@.-]c\w*/ contained
@@ -100,6 +71,8 @@ syntax match TodoW /[+@.-]w\w*/ contained
 syntax match TodoX /[+@.-]x\w*/ contained
 syntax match TodoY /[+@.-]y\w*/ contained
 syntax match TodoZ /[+@.-]z\w*/ contained
+
+syntax region TodoRegion start=/[+@]\w/ end=/\(\s\|$\)/ contains=TodoA,TodoB,TodoC,TodoD,TodoE,TodoF,TodoG,TodoH,TodoI,TodoJ,TodoK,TodoL,TodoM,TodoN,TodoO,TodoP,TodoQ,TodoR,TodoS,TodoT,TodoU,TodoV,TodoW,TodoX,TodoY,TodoZ
 
 syntax match TodoTagA /a\w\+:/
 syntax match TodoTagB /b\w\+:/
@@ -129,6 +102,33 @@ syntax match TodoTagY /y\w\+:/
 syntax match TodoTagZ /z\w\+:/
 
 syntax cluster TodoTagGroup add=TodoTagA,TodoTagB,TodoTagC,TodoTagD,TodoTagE,TodoTagF,TodoTagG,TodoTagH,TodoTagI,TodoTagJ,TodoTagK,TodoTagL,TodoTagM,TodoTagN,TodoTagO,TodoTagP,TodoTagQ,TodoTagR,TodoTagS,TodoTagT,TodoTagU,TodoTagV,TodoTagW,TodoTagX,TodoTagY,TodoTagZ
+
+syntax  match  TodoPriorityA  '^([aA])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
+syntax  match  TodoPriorityB  '^([bB])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
+syntax  match  TodoPriorityC  '^([cC])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
+syntax  match  TodoPriorityD  '^([dD])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
+syntax  match  TodoPriorityE  '^([eE])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
+syntax  match  TodoPriorityF  '^([fF])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
+syntax  match  TodoPriorityG  '^([gG])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
+syntax  match  TodoPriorityH  '^([hH])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
+syntax  match  TodoPriorityI  '^([iI])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
+syntax  match  TodoPriorityJ  '^([jJ])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
+syntax  match  TodoPriorityK  '^([kK])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
+syntax  match  TodoPriorityL  '^([lL])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
+syntax  match  TodoPriorityM  '^([mM])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
+syntax  match  TodoPriorityN  '^([nN])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
+syntax  match  TodoPriorityO  '^([oO])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
+syntax  match  TodoPriorityP  '^([pP])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
+syntax  match  TodoPriorityQ  '^([qQ])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
+syntax  match  TodoPriorityR  '^([rR])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
+syntax  match  TodoPriorityS  '^([sS])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
+syntax  match  TodoPriorityT  '^([tT])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
+syntax  match  TodoPriorityU  '^([uU])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
+syntax  match  TodoPriorityV  '^([vV])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
+syntax  match  TodoPriorityW  '^([wW])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
+syntax  match  TodoPriorityX  '^([xX])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
+syntax  match  TodoPriorityY  '^([yY])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
+syntax  match  TodoPriorityZ  '^([zZ])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
 
 " Other priority colours might be defined by the user
 " highlight  default  link  TodoDone       Comment
