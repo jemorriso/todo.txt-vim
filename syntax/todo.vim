@@ -43,45 +43,6 @@ syntax  match  TodoDate31     '\d\{2,4\}-\d\{2\}-31' contains=NONE
 
 syntax cluster TodoDateGroup add=TodoDate1,TodoDate2,TodoDate3,TodoDate4,TodoDate5,TodoDate6,TodoDate7,TodoDate8,TodoDate9,TodoDate10,TodoDate11,TodoDate12,TodoDate13,TodoDate14,TodoDate15,TodoDate16,TodoDate17,TodoDate18,TodoDate19,TodoDate20,TodoDate21,TodoDate22,TodoDate23,TodoDate24,TodoDate25,TodoDate26,TodoDate27,TodoDate28,TodoDate29,TodoDate30,TodoDate31
 
-" syntax  match  TodoProjectA    '\(^\|\W\)+a[^[:blank:]]\+'  contains=NONE
-" syntax  match  TodoProjectB    '\(^\|\W\)+b[^[:blank:]]\+'  contains=NONE
-" syntax  match  TodoProjectC    '\(^\|\W\)+c[^[:blank:]]\+'  contains=NONE
-" syntax  match  TodoProjectD    '\(^\|\W\)+d[^[:blank:]]\+'  contains=NONE
-" syntax  match  TodoProjectE    '\(^\|\W\)+e[^[:blank:]]\+'  contains=NONE
-" syntax  match  TodoProjectF    '\(^\|\W\)+f[^[:blank:]]\+'  contains=NONE
-" syntax  match  TodoProjectG    '\(^\|\W\)+g[^[:blank:]]\+'  contains=NONE
-" syntax  match  TodoProjectH    '\(^\|\W\)+h[^[:blank:]]\+'  contains=NONE
-" syntax  match  TodoProjectI    '\(^\|\W\)+i[^[:blank:]]\+'  contains=NONE
-" syntax  match  TodoProjectJ    '\(^\|\W\)+j[^[:blank:]]\+'  contains=NONE
-" syntax  match  TodoProjectK    '\(^\|\W\)+k[^[:blank:]]\+'  contains=NONE
-" syntax  match  TodoProjectL    '\(^\|\W\)+l[^[:blank:]]\+'  contains=NONE
-" syntax  match  TodoProjectM    '\(^\|\W\)+m[^[:blank:]]\+'  contains=NONE
-" syntax  match  TodoProjectN    '\(^\|\W\)+n[^[:blank:]]\+'  contains=NONE
-" syntax  match  TodoProjectO    '\(^\|\W\)+o[^[:blank:]]\+'  contains=NONE
-" syntax  match  TodoProjectP    '\(^\|\W\)+p[^[:blank:]]\+'  contains=NONE
-" syntax  match  TodoProjectQ    '\(^\|\W\)+q[^[:blank:]]\+'  contains=NONE
-" syntax  match  TodoProjectR    '\(^\|\W\)+r[^[:blank:]]\+'  contains=NONE
-" syntax  match  TodoProjectS    '\(^\|\W\)+s[^[:blank:]]\+'  contains=NONE
-" syntax  match  TodoProjectT    '\(^\|\W\)+t[^[:blank:]]\+'  contains=NONE
-" syntax  match  TodoProjectU    '\(^\|\W\)+u[^[:blank:]]\+'  contains=NONE
-" syntax  match  TodoProjectV    '\(^\|\W\)+v[^[:blank:]]\+'  contains=NONE
-" syntax  match  TodoProjectW    '\(^\|\W\)+w[^[:blank:]]\+'  contains=NONE
-" syntax  match  TodoProjectX    '\(^\|\W\)+x[^[:blank:]]\+'  contains=NONE
-" syntax  match  TodoProjectY    '\(^\|\W\)+y[^[:blank:]]\+'  contains=NONE
-" syntax  match  TodoProjectZ    '\(^\|\W\)+z[^[:blank:]]\+'  contains=NONE
-
-" syntax  match  TodoProjectW    '+w\w\+.\?'
-" syntax  match  TodoProjectN    '+n\w\+.\?'
-" syntax  match  TodoProjectN    '+\w\+.\zs\w\+'
-" syntax match TodoProjectN /\v\+\w+\.\zs\w+/
-" syntax match TodoProjectN 'a'
-
-" syntax match TodoSubProject '+\w\+.\zs\w\+'
-
-" syntax cluster TodoProjectGroup add=TodoProjectA,TodoProjectB,TodoProjectC,TodoProjectD,TodoProjectE,TodoProjectF,TodoProjectG,TodoProjectH,TodoProjectI,TodoProjectJ,TodoProjectK,TodoProjectL,TodoProjectM,TodoProjectN,TodoProjectO,TodoProjectP,TodoProjectQ,TodoProjectR,TodoProjectS,TodoProjectT,TodoProjectU,TodoProjectV,TodoProjectW,TodoProjectX,TodoProjectY,TodoProjectZ
-syntax cluster TodoProjectGroup add=TodoProject
-syntax cluster TodoContextGroup add=TodoContext
-
 syntax  match  TodoPriorityA  '^([aA])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
 syntax  match  TodoPriorityB  '^([bB])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
 syntax  match  TodoPriorityC  '^([cC])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
@@ -110,11 +71,8 @@ syntax  match  TodoPriorityY  '^([yY])\s.\+$'             contains=@TodoDateGrou
 syntax  match  TodoPriorityZ  '^([zZ])\s.\+$'             contains=@TodoDateGroup,@TodoProjectGroup, @TodoContextGroup,OverDueDate,TodoRegion,@TodoTagGroup
 
 syntax  match  TodoDone       '^[xX]\s.\+$'
-" syntax  match  TodoContext    '\(^\|\W\)@[^[:blank:]]\+'  contains=NONE
 
 syntax region TodoRegion start=/[+@]\w/ end=/\(\s\|$\)/ contains=TodoA,TodoB,TodoC,TodoD,TodoE,TodoF,TodoG,TodoH,TodoI,TodoJ,TodoK,TodoL,TodoM,TodoN,TodoO,TodoP,TodoQ,TodoR,TodoS,TodoT,TodoU,TodoV,TodoW,TodoX,TodoY,TodoZ
-" syntax region TodoProject start=/+\w/ end=/$/ contains=TodoSubProject
-" syntax match TodoSubProject '\.\zs\w\+\ze\.' contained
 
 syntax match TodoA /[+@.-]a\w*/ contained
 syntax match TodoB /[+@.-]b\w*/ contained
@@ -172,16 +130,6 @@ syntax match TodoTagZ /z\w\+:/
 
 syntax cluster TodoTagGroup add=TodoTagA,TodoTagB,TodoTagC,TodoTagD,TodoTagE,TodoTagF,TodoTagG,TodoTagH,TodoTagI,TodoTagJ,TodoTagK,TodoTagL,TodoTagM,TodoTagN,TodoTagO,TodoTagP,TodoTagQ,TodoTagR,TodoTagS,TodoTagT,TodoTagU,TodoTagV,TodoTagW,TodoTagX,TodoTagY,TodoTagZ
 
-" syntax match TodoSubProject /+\w\+.\?/ contained
-
-" syntax region TodoContext start=/@\w/ end=/\(\s\|$\)/ contains=TodoSubContext,TodoSubMiddle
-" " syntax region TodoContext start=/@\w/ end=/$/ contains=TodoSubContext
-" syntax match TodoSubContext /@\w\+/ contained
-"
-" syntax match TodoSubMiddle /\.\w\+/ contained
-" " syntax match TodoSubContext /@\w\+.\?/ contained
-
-
 " Other priority colours might be defined by the user
 " highlight  default  link  TodoDone       Comment
 " highlight  default  link  TodoPriorityA  Constant
@@ -226,7 +174,6 @@ syntax cluster TodoTagGroup add=TodoTagA,TodoTagB,TodoTagC,TodoTagD,TodoTagE,Tod
 " rosewater           WinBar
 
 highlight  default  link  TodoDone       Comment
-" highlight  default  link  TodoContext    Special
 
 highlight  default  link  TodoPriorityA  Error
 highlight  default  link  TodoPriorityB  @variable.parameter
@@ -314,33 +261,6 @@ highlight  default  link  TodoX  Character
 highlight  default  link  TodoY  Operator
 highlight  default  link  TodoZ  Label
 
-highlight  default  link  TodoProjectA  WinBar
-highlight  default  link  TodoProjectB  Identifier
-highlight  default  link  TodoProjectC  PreProc
-highlight  default  link  TodoProjectD  Statement
-highlight  default  link  TodoProjectE  Error
-highlight  default  link  TodoProjectF  @variable.parameter
-highlight  default  link  TodoProjectG  Constant
-highlight  default  link  TodoProjectH  WarningMsg
-highlight  default  link  TodoProjectI  String
-highlight  default  link  TodoProjectJ  Character
-highlight  default  link  TodoProjectK  Operator
-highlight  default  link  TodoProjectL  Label
-highlight  default  link  TodoProjectM  Function
-highlight  default  link  TodoProjectN  CursorLineNr
-highlight  default  link  TodoProjectO  WinBar
-highlight  default  link  TodoProjectP  Identifier
-highlight  default  link  TodoProjectQ  PreProc
-highlight  default  link  TodoProjectR  Statement
-highlight  default  link  TodoProjectS  Error
-highlight  default  link  TodoProjectT  @variable.parameter
-highlight  default  link  TodoProjectU  Constant
-highlight  default  link  TodoProjectV  WarningMsg
-highlight  default  link  TodoProjectW  String
-highlight  default  link  TodoProjectX  Character
-highlight  default  link  TodoProjectY  Operator
-highlight  default  link  TodoProjectZ  Label
-
 highlight  default  link  TodoTagA  WinBar
 highlight  default  link  TodoTagB  Identifier
 highlight  default  link  TodoTagC  PreProc
@@ -367,11 +287,6 @@ highlight  default  link  TodoTagW  String
 highlight  default  link  TodoTagX  Character
 highlight  default  link  TodoTagY  Operator
 highlight  default  link  TodoTagZ  Label
-
-" highlight  default  link  TodoSubProject  Label
-" highlight  default  link  TodoSubProjectN  WarningMsg
-" highlight  default  link  TodoSubContext  Error
-" highlight  default  link  TodoSubMiddle  WarningMsg
 
 if exists('g:todo_load_python') && g:todo_load_python
     if has('python')
