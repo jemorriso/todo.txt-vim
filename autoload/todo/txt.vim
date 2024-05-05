@@ -87,6 +87,19 @@ function! todo#txt#remove_completed()
     call s:append_to_file(l:done_file, l:completed)
 endfunction
 
+function! todo#txt#remove_to_done_file(done_file, done_letter)
+    let l:target_dir = expand('%:p:h')
+    let l:todo_file = expand('%:p')
+    if !filewritable(a:done_file) && !filewritable(l:target_dir)
+        echoerr "Can't write to file '" . a:done_file . "'"
+        return
+    endif
+
+    let l:completed = []
+    execute 'g/^' . a:done_letter . ' /call add(l:completed, getline(line(".")))|d'
+    call s:append_to_file(a:done_file, l:completed)
+endfunction
+
 function! todo#txt#sort_by_context() range
     execute a:firstline . "," . a:lastline . "sort /\\(^\\| \\)\\zs@[^[:blank:]]\\+/ r"
 endfunction
