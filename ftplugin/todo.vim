@@ -18,8 +18,11 @@ setlocal wrapmargin=0
 
 " Mappings {{{1
 " Sort tasks {{{2
-nnoremap <script> <silent> <buffer> <localleader>ss :%call todo#txt#sort_with_alignment()<CR>
-vnoremap <script> <silent> <buffer> <localleader>ss :call todo#txt#sort_with_alignment()<CR>
+"
+" Sort by first non-whitespace character. This is helpful when tasks are
+" aligned differently.
+nnoremap <script> <silent> <buffer> <localleader>ss :%sort /\S.*/ r<CR>
+vnoremap <script> <silent> <buffer> <localleader>ss :sort /\S.*/ r<CR>
 nnoremap <script> <silent> <buffer> <localleader>sc :%call todo#txt#sort_by_context()<CR>
 vnoremap <script> <silent> <buffer> <localleader>sc :call todo#txt#sort_by_context()<CR>
 nnoremap <script> <silent> <buffer> <localleader>sp :%call todo#txt#sort_by_project()<CR>
@@ -112,6 +115,7 @@ nnoremap <script> <silent> <buffer> <localleader>X :call todo#txt#mark_all_as_do
 " Remove completed {{{2
 " nnoremap <script> <silent> <buffer> <localleader>D :call todo#txt#remove_completed()<CR>
 nnoremap <script> <silent> <buffer> <localleader>D :call todo#txt#remove_to_all_done_files()<CR>
+nnoremap <script> <silent> <buffer> <localleader>S :call todo#txt#remove_to_someday_file()<CR>
 " nnoremap <script> <silent> <buffer> <localleader>W :call todo#txt#remove_to_done_file('wontdo.txt', 'w')<CR>
 " nnoremap <script> <silent> <buffer> <localleader>F :call todo#txt#remove_to_done_file('failed.txt', 'f')<CR>
 
