@@ -112,6 +112,16 @@ function! todo#txt#remove_to_done_file(done_file, done_letter)
     call s:append_to_file(a:done_file, l:completed)
 endfunction
 
+function! todo#txt#remove_to_all_done_files()
+    call todo#txt#remove_completed()
+    call todo#txt#remove_to_done_file('wontdo.txt', 'w')
+    call todo#txt#remove_to_done_file('failed.txt', 'f')
+endfunction
+
+function! todo#txt#sort_with_alignment() range
+    execute a:firstline . "," . a:lastline . "sort /\S/ r"
+endfunction
+
 function! todo#txt#sort_by_context() range
     execute a:firstline . "," . a:lastline . "sort /\\(^\\| \\)\\zs@[^[:blank:]]\\+/ r"
 endfunction
