@@ -119,6 +119,8 @@ nnoremap <script> <silent> <buffer> <localleader>S :call todo#txt#remove_to_some
 " nnoremap <script> <silent> <buffer> <localleader>W :call todo#txt#remove_to_done_file('wontdo.txt', 'w')<CR>
 " nnoremap <script> <silent> <buffer> <localleader>F :call todo#txt#remove_to_done_file('failed.txt', 'f')<CR>
 
+nnoremap <script> <silent> <buffer> <localleader>r :call todo#txt#complete_recurring_task()<CR>
+
 " Folding {{{1
 " Options {{{2
 setlocal foldmethod=expr
