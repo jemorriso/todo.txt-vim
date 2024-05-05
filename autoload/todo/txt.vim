@@ -176,5 +176,34 @@ function! todo#txt#prioritize_add_action(priority)
     execute 's/^\(([a-zA-Z]) \)\?/(' . a:priority . ') /'
 endfunction
 
+function! todo#txt#increment_recurring_due_date()
+    " Get the current line
+    let line = getline('.')
+
+    " Call the external Python function
+    let newLine = system('python3 /Users/jerry/.local/share/nvim/lazy/todo.txt-vim/python/increment_date.py "' . line . '"')
+
+    " Remove trailing newline from system command output
+    let newLine = substitute(newLine, '\n\+$', '', '')
+
+    " Replace the current line with the new one
+    call setline('.', newLine)
+
+endfunction
+
+function! todo#txt#complete_recurring_task()
+    " copy line below
+    execute "normal! yypk"
+
+    " complete task
+    call todo#txt#mark_as_done()
+
+    " Move the cursor to the new line
+    execute "normal! j"
+
+    " increment due date
+    call todo#txt#increment_recurring_due_date()
+endfunction
+
 " Modeline {{{1
 " vim: ts=8 sw=4 sts=4 et foldenable foldmethod=marker foldcolumn=1
