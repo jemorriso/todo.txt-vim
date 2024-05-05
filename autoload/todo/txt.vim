@@ -107,15 +107,20 @@ function! todo#txt#sort_by_due_date() range
     execute a:firstline . "," . a:lastline . "g!/" . l:date_regex . "/m" . a:lastline
 endfunction
 
-" Increment and Decrement The Priority
-:set nf=octal,hex,alpha
-
 function! todo#txt#prioritize_increase()
+    " save old nf (nrformats), increment priority of alpha, restore nf, so that we don't mess with the user's settings
+    let l:old_nf = &nf
+    set nf=octal,hex,alpha
     normal! 0f)h
+    let &nf = l:old_nf
 endfunction
 
 function! todo#txt#prioritize_decrease()
+    " save old nf (nrformats), decrement priority of alpha, restore nf, so that we don't mess with the user's settings
+    let l:old_nf = &nf
+    set nf=octal,hex,alpha
     normal! 0f)h
+    let &nf = l:old_nf
 endfunction
 
 function! todo#txt#prioritize_add(priority)
