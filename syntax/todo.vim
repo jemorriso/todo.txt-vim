@@ -10,6 +10,8 @@ if exists("b:current_syntax")
 endif
 
 syntax  match  TodoDone       '^[xX]\s.\+$'
+syntax  match  TodoWontDo     '^[wW]\s.\+$'
+syntax  match  TodoFailed     '^[fF]\s.\+$'
 
 syntax  match  TodoDate1      '\d\{2,4\}-\d\{2\}-01' contains=NONE
 syntax  match  TodoDate2      '\d\{2,4\}-\d\{2\}-02' contains=NONE
@@ -155,7 +157,10 @@ syntax  match  TodoPriorityZ  '^([zZ])\s.\+$'             contains=@TodoDateGrou
 " sapphire            Label
 " blue                Function
 " lavender            CursorLineNr
-" overlay0            Comment (TodoDone) " skip this one for date and project
+" these ones used for done, wontdo and failed
+" overlay0            Comment (TodoDone)
+" surface2            DapUIBreakpointsDisabledLine
+" surface1            LineNr
 "
 " todo priority order from A to Z, cycling
 " red                 Error
@@ -174,6 +179,8 @@ syntax  match  TodoPriorityZ  '^([zZ])\s.\+$'             contains=@TodoDateGrou
 " rosewater           WinBar
 
 highlight  default  link  TodoDone       Comment
+highlight  default  link  TodoWontdo     DapUIBreakpointsDisabledLine
+highlight  default  link  TodoFailed     LineNr
 
 highlight  default  link  TodoPriorityA  Error
 highlight  default  link  TodoPriorityB  @variable.parameter
